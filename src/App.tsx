@@ -1,11 +1,13 @@
-import { Board } from './components/CardList';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+import Board from './components/Board';
 
-const App = () => {
+function App() {
   return (
-    <div className="font-sans">
+    <DndProvider backend={HTML5Backend}>
       <Board />
-    </div>
+    </DndProvider>
   );
-};
+}
 
 export default App;
