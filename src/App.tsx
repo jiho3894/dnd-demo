@@ -1,10 +1,11 @@
-import { CardList } from './components/CardList';
+import { Board } from './components/CardList';
 
-export default function App() {
+const App = () => {
   return (
-    <main className="max-w-md mx-auto mt-10">
-      <h1 className="text-2xl font-bold mb-4">📌 카드 리스트</h1>
-      <CardList />
-    </main>
+    <div className="font-sans">
+      <Board />
+    </div>
   );
-}
+};
+
+export default App;

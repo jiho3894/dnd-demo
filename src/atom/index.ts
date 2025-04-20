@@ -5,8 +5,29 @@ export interface CardType {
   title: string;
 }
 
-export const cardsAtom = atom<CardType[]>([
-  { id: '1', title: '카드 1번' },
-  { id: '2', title: '카드 2번' },
-  { id: '3', title: '카드 3번' },
+export interface ColumnType {
+  id: string;
+  title: string;
+  cards: CardType[];
+}
+
+export const boardAtom = atom<ColumnType[]>([
+  {
+    id: 'todo',
+    title: 'Todo',
+    cards: [
+      { id: 'card-1', title: '할 일 1' },
+      { id: 'card-2', title: '할 일 2' },
+    ],
+  },
+  {
+    id: 'inprogress',
+    title: 'In Progress',
+    cards: [{ id: 'card-3', title: '진행 중 1' }],
+  },
+  {
+    id: 'done',
+    title: 'Done',
+    cards: [],
+  },
 ]);
